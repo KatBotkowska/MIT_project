@@ -1,0 +1,21 @@
+import time
+print('I\'ll guess your secret number. Think of a number between 0 and 100 ')
+time.sleep(3) #opóźnienie czasowe przed odpowiedzią
+high = 100 #maksymalna liczba
+low = 0 #minimalna liczba
+answer = False
+
+while not answer:
+    secret_number = (high + low)//2
+    print('Is your secret number ', secret_number, "?")
+    ans = input('Enter h to indicate the guess is too high. Enter l to indicate the guess is too low. Enter c to indicate I guessed correctly.')
+
+    if ans == 'c':
+        print("Game over. Your secret number is ", secret_number)
+        answer = True
+    elif ans == 'l':
+        low = secret_number
+    elif ans == 'h':
+        high = secret_number
+    else:
+        print(ans, " is not a right answer, try again")
